@@ -1,12 +1,64 @@
 package Boundary;
 
 import javax.swing.*;
+import java.awt.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TrainingProgramPage extends JFrame implements ActionListener {
-    //点击成绩页面的培养方案标志后，显示培养方案页面
-    public TrainingProgramPage(){
+    private JTextArea textArea;
+
+    public TrainingProgramPage() {
+        setTitle("Training Program");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        textArea = new JTextArea();
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        add(scrollPane, BorderLayout.CENTER);
+
+        setSize(400, 500);
+        setLocationRelativeTo(null); // 将窗口置于屏幕中心
+        setVisible(true);
+
+        loadFileContent();
+    }
+
+    private void loadFileContent() {
+        String filePath = "src/Data/TrainingProgram.txt";
+        File file = new File(filePath);
+        if (file.exists() && file.isFile()) {
+            String content = readFileContent(file);
+            textArea.setText(content);
+        } else {
+            textArea.setText("File not found.");
+        }
+    }
+
+    private String readFileContent(File file) {
+        StringBuilder content = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                content.append(line).append("\n");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return content.toString();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
+}
+
+
+
+    /*public TrainingProgramPage(){
         setTitle("Training Program");
         setSize(400,500);
         String str="<html><body>" + "Program name: 2020 IoT engineering Training Program" +
@@ -45,10 +97,5 @@ public class TrainingProgramPage extends JFrame implements ActionListener {
         add(panel);
         panel.setLayout(null);
         setVisible(true);
-    }
+    }*/
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-    }
-}

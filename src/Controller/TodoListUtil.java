@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import static com.oracle.jrockit.jfr.Transition.To;
+//import static com.oracle.jrockit.jfr.Transition.To;
 
 public class TodoListUtil {
     public List<TodoList> getTodoList(int indexOfStudentInformation) {
@@ -44,19 +44,19 @@ public class TodoListUtil {
             //读到大数组
             JSONArray jsonArray = new JSONArray(new JSONTokener(new FileReader("src/Data/InformationOfStudents.json")));
             //for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonObject = jsonArray.getJSONObject(indexOfStudentInformation);//找到todolist数组
-                //读到小数组
-                JSONArray arr = jsonObject.getJSONArray("todoList");
-                List<TodoList> list = new ArrayList<TodoList>();
-                for(int j = 0; j < arr.length(); j++) {
-                    String todoThing=arr.getJSONObject(j).getString("todoThing");
-                    boolean statusOfThing=arr.getJSONObject(j).getBoolean("statusOfThing");
-                    TodoList item=new TodoList(todoThing,statusOfThing);
-                    list.add(item);
-                }
-                list.add(newItem);//把传进来的事项添加进去
-                jsonObject.remove("todoList");
-                jsonObject.put("todoList",list);
+            JSONObject jsonObject = jsonArray.getJSONObject(indexOfStudentInformation);//找到todolist数组
+            //读到小数组
+            JSONArray arr = jsonObject.getJSONArray("todoList");
+            List<TodoList> list = new ArrayList<TodoList>();
+            for(int j = 0; j < arr.length(); j++) {
+                String todoThing=arr.getJSONObject(j).getString("todoThing");
+                boolean statusOfThing=arr.getJSONObject(j).getBoolean("statusOfThing");
+                TodoList item=new TodoList(todoThing,statusOfThing);
+                list.add(item);
+            }
+            list.add(newItem);//把传进来的事项添加进去
+            jsonObject.remove("todoList");
+            jsonObject.put("todoList",list);
             //}
 
             File jsonFile = new File("src/Data/InformationOfStudents.json");

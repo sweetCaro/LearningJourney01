@@ -1,0 +1,63 @@
+Training Program
+Program name: 2020 Internet of Things engineering Training Program
+Grade: 2020
+Name of major: Internet of Things engineering
+Degree: Bachelor
+Length of schooling: general full-time
+
+
+2020-2021 school year
+First Semester (Autumn)
+001   Advanced Mathematics A (Part 1)
+002   Linear Algebra
+003   Introduction to computers and Programming
+004   Integrated English (1-2)
+005   Fundamentals of Sports (1)
+
+Second Semester (Spring)
+006   Integrated English (3)
+007   Advanced Mathematics A (Part 2)
+008   College Physics C
+009   Outline of Chinese Modern History
+010   Physics Experiment C
+
+2021-2022 school year
+First Semester (Autumn)
+011   Fundamentals of Sports (2)
+012   Discrete Mathematics
+013   Introduction to Internet of Things technology
+014   Data Structure
+015   Signals and Systems
+
+Second Semester (Spring)
+016   Digital Circuits and Logical Programming
+017   Probability Theory and Stochastic Process
+018   Java Language Programming
+019   Database
+020   Product development and management
+
+2022-2023 school year
+First Semester (Autumn)
+021   Operating System
+022   Cloud Computing
+023   Control Theory
+024   Ad Hoc Networks
+025   Network and Protocol
+
+Second Semester (Spring)
+026   Radio Frequency Identification
+027   Wireless Sensor Network
+028   Internet of Things information processing technology
+029   Mobile Internet
+030   Principles of artificial intelligence
+
+2023-2024 school year
+First Semester (Autumn)
+031   Data Warehouse and Data Mining
+032   Multimedia Technology
+033   Communication Theory
+034   Safety and Certification
+035   Introduction to Service science and Service engineering
+
+Second Semester (Spring)
+036   Graduation Project

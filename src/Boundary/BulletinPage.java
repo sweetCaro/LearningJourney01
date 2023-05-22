@@ -24,10 +24,11 @@ public class BulletinPage extends JFrame implements ActionListener{
     DefaultListModel<String> listModel;
     public BulletinPage(int indexOfStudentInformation) {
         setTitle("Bulletin");
-        setSize(350,500);
+        setSize(373,450);
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
         JPanel panel = new JPanel();
         add(panel);
+        panel.setBackground(new Color(98, 154, 208));
         panel.setLayout(null);
 
         listModel = new DefaultListModel<String>();

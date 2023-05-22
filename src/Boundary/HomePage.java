@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -93,8 +94,12 @@ public class HomePage extends JFrame implements ActionListener{
         assessmentPanel.setBounds(5,270,400,50);
 
         PersonalDevelopmentPanel personalDevelopmentPanel=new PersonalDevelopmentPanel(indexOfStudentInformation);
-        currentModule.add(personalDevelopmentPanel);
-        personalDevelopmentPanel.setBounds(5,330,400,250);
+        personalDevelopmentPanel.setPreferredSize(new Dimension(300,400));
+        JScrollPane scrollPane=new JScrollPane(personalDevelopmentPanel);
+        scrollPane.setBounds(5,330,400,250);
+        currentModule.add(scrollPane);
+        //currentModule.add(personalDevelopmentPanel);
+        //personalDevelopmentPanel.setBounds(5,330,400,250);
 
 
 
