@@ -73,6 +73,7 @@ public class CurrentModulePanel extends JPanel {
                     public void actionPerformed(ActionEvent e) {
                         ModuleIntroductionPage moduleInfoPage = new ModuleIntroductionPage(indexOfStudentInformation, finalModuleName);
                         moduleInfoPage.setLocationRelativeTo(null);
+
                         moduleInfoPage.setVisible(true);
                         System.out.println(finalModuleName);
                     }

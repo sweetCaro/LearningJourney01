@@ -6,17 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class ScheduleUtil extends ModuleUtil{
+public class ScheduleUtil extends CurrentModuleUtil{
     @Override
     public List<Module> getModules(int indexOfStudentInformation) {
-        List<Module> modules = super.getModules(indexOfStudentInformation);
-        List<Module> currentModule=new ArrayList<Module>();
-        for(Module module : modules){
-            if(Objects.equals(module.getState(), "current")){
-                currentModule.add(module);
-            }
-        }
-        return currentModule;
+        return super.getModules(indexOfStudentInformation);
     }
     public int[] getTimeAndDay(Module module) {
         int[] timeAndDay = new int[2];

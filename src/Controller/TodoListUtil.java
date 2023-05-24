@@ -59,20 +59,24 @@ public class TodoListUtil {
             jsonObject.put("todoList",list);
             //}
 
-            File jsonFile = new File("src/Data/InformationOfStudents.json");
-            for (int i = 0; i < jsonArray.length(); i++) {
-                try {
-                    FileWriter fileWriter = new FileWriter(jsonFile.getAbsoluteFile(), false);
-                    BufferedWriter writer = new BufferedWriter(fileWriter);
-                    writer.write(String.valueOf(jsonArray));
-                    writer.close();
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-
-            }
+            getJSONFile(jsonArray);
         }catch (Exception e){
             e.printStackTrace();
+        }
+    }
+
+    private void getJSONFile(JSONArray jsonArray) {
+        File jsonFile = new File("src/Data/InformationOfStudents.json");
+        for (int i = 0; i < jsonArray.length(); i++) {
+            try {
+                FileWriter fileWriter = new FileWriter(jsonFile.getAbsoluteFile(), false);
+                BufferedWriter writer = new BufferedWriter(fileWriter);
+                writer.write(String.valueOf(jsonArray));
+                writer.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
         }
     }
 
@@ -97,18 +101,7 @@ public class TodoListUtil {
             jsonObject.put("todoList",list);
             System.out.println(list.get(4).getStatusOfThing());
 
-            File jsonFile = new File("src/Data/InformationOfStudents.json");
-            for (int i = 0; i < jsonArray.length(); i++) {
-                try {
-                    FileWriter fileWriter = new FileWriter(jsonFile.getAbsoluteFile(), false);
-                    BufferedWriter writer = new BufferedWriter(fileWriter);
-                    writer.write(String.valueOf(jsonArray));
-                    writer.close();
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-
-            }
+            getJSONFile(jsonArray);
         }catch (Exception e){
             e.printStackTrace();
         }

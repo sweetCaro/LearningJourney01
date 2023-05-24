@@ -1,1 +1,297 @@
-[{"password":"123","role":[{"roleName":"Leader of basketball team","roleTime":"2020.09-2021.09"},{"roleName":"Class monitor","roleTime":"2020.09 until now"}],"trainingProgram":"待补充","todoList":[{"todoThing":"Upload discrete math coursework","statusOfThing":true},{"todoThing":"Upload discrete English coursework","statusOfThing":false},{"todoThing":"Add some todo items!","statusOfThing":false},{"todoThing":"draw some picture！","statusOfThing":true},{"todoThing":"running","statusOfThing":false}],"awards":[{"awardName":"First Place of Singing Competition","awardTime":"2020.10"},{"awardName":"Second Place of Math Competition","awardTime":"2021.10"}],"studentName":"Sweet Caroline","module":[{"score":0,"teacherEmail":"James@quml.ac.uk","teacher":"Taylor James","intro":"a simple platform-independent object-oriented programming language used for writing applets that are downloaded from the World Wide Web by a client and run on the client's machine.","moduleName":"Java Programming","weekday":"Monday","openYear":"2","state":"current","beginTime":8,"endTime":10,"moduleId":"EBU0012","credit":15},{"score":0,"teacherEmail":"Jim@quml.ac.uk","teacher":"Taylor Jim","intro":"A database is an organized collection of data. It is the collection of schemas, tables, queries, reports, views and other objects. The data are typically organized to model aspects of reality in a way that supports processes requiring information, such as modelling the availability of rooms in hotels in a way that supports finding a hotel with vacancies.","moduleName":"Database","weekday":"Tuesday","openYear":"2","state":"current","beginTime":9,"endTime":11,"moduleId":"EBU0013","credit":15},{"score":0,"teacherEmail":"Jim@quml.ac.uk","teacher":"Taylor Jim","intro":"a science (or group of related sciences) dealing with the logic of quantity and shape and arrangement","moduleName":"Advanced Math","weekday":"Thursday","openYear":"2","state":"current","beginTime":7,"endTime":9,"moduleId":"EBU0013","credit":15},{"score":90,"teacherEmail":"Jim@quml.ac.uk","teacher":"Taylor Jim","intro":" ","moduleName":"English","weekday":"Friday","openYear":"2","state":"passed","beginTime":11,"endTime":12,"moduleId":"EBU0013","credit":15},{"score":92,"teacherEmail":"john.williams@quml.ac.uk","teacher":"John Williams","intro":" ","moduleName":"Advanced Mathematics A (Part 1)","weekday":"Monday","openYear":"1","state":"passed","beginTime":8,"endTime":10,"moduleId":"EBU0001","credit":3},{"score":85,"teacherEmail":"sarah.johnson@quml.ac.uk","teacher":"Sarah Johnson","intro":" ","moduleName":"Linear Algebra","weekday":"Monday","openYear":"1","state":"passed","beginTime":10,"endTime":12,"moduleId":"EBU0002","credit":3},{"score":88,"teacherEmail":"michael.davis@quml.ac.uk","teacher":"Michael Davis","intro":" ","moduleName":"Introduction to Computers and Programming","weekday":"Tuesday","openYear":"1","state":"passed","beginTime":13,"endTime":15,"moduleId":"EBU0003","credit":4},{"score":70,"teacherEmail":"jessica.thompson@quml.ac.uk","teacher":"Jessica Thompson","intro":" ","moduleName":"Integrated English (1-2)","weekday":"Wednesday","openYear":"1","state":"passed","beginTime":9,"endTime":11,"moduleId":"EBU0004","credit":3},{"score":87,"teacherEmail":"emily.brown@quml.ac.uk","teacher":"Emily Brown","intro":" ","moduleName":"Fundamentals of Sports (1)","weekday":"Thursday","openYear":"1","state":"passed","beginTime":14,"endTime":16,"moduleId":"EBU0005","credit":2},{"score":86,"teacherEmail":"michael.roberts@quml.ac.uk","teacher":"Michael Roberts","intro":" ","moduleName":"College Physics C","weekday":"Thursday","openYear":"1","state":"passed","beginTime":8,"endTime":10,"moduleId":"EBU0008","credit":4},{"score":90,"teacherEmail":"david.lee@quml.ac.uk","teacher":"David Lee","intro":" ","moduleName":"Outline of Chinese Modern History","weekday":"Friday","openYear":"1","state":"passed","beginTime":14,"endTime":16,"moduleId":"EBU0009","credit":3},{"score":87,"teacherEmail":"jennifer.taylor@quml.ac.uk","teacher":"Jennifer Taylor","intro":" ","moduleName":"Physics Experiment C","weekday":"Saturday","openYear":"1","state":"passed","beginTime":9,"endTime":11,"moduleId":"EBU0010","credit":2},{"score":91,"teacherEmail":"emily.wilson@quml.ac.uk","teacher":"Emily Wilson","intro":" ","moduleName":"Discrete Mathematics","weekday":"Tuesday","openYear":"2","state":"passed","beginTime":13,"endTime":15,"moduleId":"EBU0012","credit":4},{"score":0,"teacherEmail":"andrewt@quml.ac.uk","teacher":"Andrew Thompson","intro":"Radio-frequency identification (RFID) uses electromagnetic fields to automatically identify and track tags attached to objects. The tags contain electronically stored information. Passive tags collect energy from a nearby RFID reader's interrogating radio waves. Active tags have a local power source such as a battery and may operate at hundreds of meters from the RFID reader. Unlike a barcode, the tag need not be within the line of sight of the reader, so it may be embedded in the tracked object. RFID is one method for Automatic Identification and Data Capture (AIDC).","moduleName":"RFID","weekday":"Monday","openYear":"3","state":"current","beginTime":13,"endTime":15,"moduleId":"EBU0026","credit":2},{"score":0,"teacherEmail":"emilyd@quml.ac.uk","teacher":"Emily Davis","intro":"Wireless sensor networks (WSN), sometimes called wireless sensor and actuator networks (WSAN), are spatially distributed autonomous sensors to monitor physical or environmental conditions, such as temperature, sound, pressure, etc. and to cooperatively pass their data through the network to a main location. The more modern networks are bi-directional, also enabling control of sensor activity. The development of wireless sensor networks was motivated by military applications such as battlefield surveillance; today such networks are used in many industrial and consumer applications, such as industrial process monitoring and control, machine health monitoring, and so on.","moduleName":"Wireless Sensor","weekday":"Tuesday","openYear":"3","state":"current","beginTime":10,"endTime":12,"moduleId":"EBU0027","credit":4}],"portfolios":[{"projectIntroduction":"this is a database design","fileLink":"inputFile/ERdiagram.png","projectName":"Design a Database for a manage system"},{"projectIntroduction":"An AI-powered chatbot.","fileLink":"inputFile/chatbot_demo_video.mp4","projectName":"Chatbot for Customer Support"},{"projectIntroduction":"The system enables customers to book tables online.","fileLink":"https://drive.google.com/drive/folders/XXXXXX","projectName":"Design a reservation system"}],"studentNo":"111","bulletin":[{"updateTime":"2021.05.20","notice":"Discrete math quiz will be held next Tuesday"}]}]
+[
+  {
+    "password": "123",
+    "role": [
+      {
+        "roleName": "Leader of basketball team",
+        "roleTime": "2020.09-2021.09"
+      },
+      {
+        "roleName": "Class monitor",
+        "roleTime": "2020.09 until now"
+      }
+    ],
+    "trainingProgram": "待补充",
+    "todoList": [
+      {
+        "todoThing": "Upload discrete math coursework",
+        "statusOfThing": true
+      },
+      {
+        "todoThing": "Upload discrete English coursework",
+        "statusOfThing": false
+      },
+      {
+        "todoThing": "Add some todo items!",
+        "statusOfThing": true
+      },
+      {
+        "todoThing": "draw some picture！",
+        "statusOfThing": true
+      },
+      {
+        "todoThing": "running",
+        "statusOfThing": false
+      },
+      {
+        "todoThing": "Add some todo items!",
+        "statusOfThing": true
+      },
+      {
+        "todoThing": "Add some todo items!",
+        "statusOfThing": false
+      },
+      {
+        "todoThing": "哈哈哈",
+        "statusOfThing": true
+      }
+    ],
+    "awards": [
+      {
+        "awardName": "First Place of Singing Competition",
+        "awardTime": "2020.10"
+      },
+      {
+        "awardName": "Second Place of Math Competition",
+        "awardTime": "2021.10"
+      }
+    ],
+    "studentName": "Sweet Caroline",
+    "module": [
+      {
+        "score": 0,
+        "teacherEmail": "James@quml.ac.uk",
+        "teacher": "Taylor James",
+        "intro": "a simple platform-independent object-oriented programming language used for writing applets that are downloaded from the World Wide Web by a client and run on the client's machine.",
+        "moduleName": "Java Programming",
+        "weekday": "Monday",
+        "openYear": "2",
+        "state": "current",
+        "beginTime": 8,
+        "endTime": 10,
+        "moduleId": "EBU0012",
+        "credit": 15
+      },
+      {
+        "score": 0,
+        "teacherEmail": "Jim@quml.ac.uk",
+        "teacher": "Taylor Jim",
+        "intro": "A database is an organized collection of data. It is the collection of schemas, tables, queries, reports, views and other objects. The data are typically organized to model aspects of reality in a way that supports processes requiring information, such as modelling the availability of rooms in hotels in a way that supports finding a hotel with vacancies.",
+        "moduleName": "Database",
+        "weekday": "Tuesday",
+        "openYear": "2",
+        "state": "current",
+        "beginTime": 9,
+        "endTime": 11,
+        "moduleId": "EBU0013",
+        "credit": 15
+      },
+      {
+        "score": 0,
+        "teacherEmail": "Jim@quml.ac.uk",
+        "teacher": "Taylor Jim",
+        "intro": "a science (or group of related sciences) dealing with the logic of quantity and shape and arrangement",
+        "moduleName": "Advanced Math",
+        "weekday": "Thursday",
+        "openYear": "2",
+        "state": "current",
+        "beginTime": 7,
+        "endTime": 9,
+        "moduleId": "EBU0013",
+        "credit": 15
+      },
+      {
+        "score": 90,
+        "teacherEmail": "Jim@quml.ac.uk",
+        "teacher": "Taylor Jim",
+        "intro": " ",
+        "moduleName": "English",
+        "weekday": "Friday",
+        "openYear": "2",
+        "state": "passed",
+        "beginTime": 11,
+        "endTime": 12,
+        "moduleId": "EBU0013",
+        "credit": 15
+      },
+      {
+        "score": 92,
+        "teacherEmail": "john.williams@quml.ac.uk",
+        "teacher": "John Williams",
+        "intro": " ",
+        "moduleName": "Advanced Mathematics A (Part 1)",
+        "weekday": "Monday",
+        "openYear": "1",
+        "state": "passed",
+        "beginTime": 8,
+        "endTime": 10,
+        "moduleId": "EBU0001",
+        "credit": 3
+      },
+      {
+        "score": 85,
+        "teacherEmail": "sarah.johnson@quml.ac.uk",
+        "teacher": "Sarah Johnson",
+        "intro": " ",
+        "moduleName": "Linear Algebra",
+        "weekday": "Monday",
+        "openYear": "1",
+        "state": "passed",
+        "beginTime": 10,
+        "endTime": 12,
+        "moduleId": "EBU0002",
+        "credit": 3
+      },
+      {
+        "score": 88,
+        "teacherEmail": "michael.davis@quml.ac.uk",
+        "teacher": "Michael Davis",
+        "intro": " ",
+        "moduleName": "Introduction to Computers and Programming",
+        "weekday": "Tuesday",
+        "openYear": "1",
+        "state": "passed",
+        "beginTime": 13,
+        "endTime": 15,
+        "moduleId": "EBU0003",
+        "credit": 4
+      },
+      {
+        "score": 70,
+        "teacherEmail": "jessica.thompson@quml.ac.uk",
+        "teacher": "Jessica Thompson",
+        "intro": " ",
+        "moduleName": "Integrated English (1-2)",
+        "weekday": "Wednesday",
+        "openYear": "1",
+        "state": "passed",
+        "beginTime": 9,
+        "endTime": 11,
+        "moduleId": "EBU0004",
+        "credit": 3
+      },
+      {
+        "score": 87,
+        "teacherEmail": "emily.brown@quml.ac.uk",
+        "teacher": "Emily Brown",
+        "intro": " ",
+        "moduleName": "Fundamentals of Sports (1)",
+        "weekday": "Thursday",
+        "openYear": "1",
+        "state": "passed",
+        "beginTime": 14,
+        "endTime": 16,
+        "moduleId": "EBU0005",
+        "credit": 2
+      },
+      {
+        "score": 86,
+        "teacherEmail": "michael.roberts@quml.ac.uk",
+        "teacher": "Michael Roberts",
+        "intro": " ",
+        "moduleName": "College Physics C",
+        "weekday": "Thursday",
+        "openYear": "1",
+        "state": "passed",
+        "beginTime": 8,
+        "endTime": 10,
+        "moduleId": "EBU0008",
+        "credit": 4
+      },
+      {
+        "score": 90,
+        "teacherEmail": "david.lee@quml.ac.uk",
+        "teacher": "David Lee",
+        "intro": " ",
+        "moduleName": "Outline of Chinese Modern History",
+        "weekday": "Friday",
+        "openYear": "1",
+        "state": "passed",
+        "beginTime": 14,
+        "endTime": 16,
+        "moduleId": "EBU0009",
+        "credit": 3
+      },
+      {
+        "score": 87,
+        "teacherEmail": "jennifer.taylor@quml.ac.uk",
+        "teacher": "Jennifer Taylor",
+        "intro": " ",
+        "moduleName": "Physics Experiment C",
+        "weekday": "Saturday",
+        "openYear": "1",
+        "state": "passed",
+        "beginTime": 9,
+        "endTime": 11,
+        "moduleId": "EBU0010",
+        "credit": 2
+      },
+      {
+        "score": 91,
+        "teacherEmail": "emily.wilson@quml.ac.uk",
+        "teacher": "Emily Wilson",
+        "intro": " ",
+        "moduleName": "Discrete Mathematics",
+        "weekday": "Tuesday",
+        "openYear": "2",
+        "state": "passed",
+        "beginTime": 13,
+        "endTime": 15,
+        "moduleId": "EBU0012",
+        "credit": 4
+      },
+      {
+        "score": 0,
+        "teacherEmail": "andrewt@quml.ac.uk",
+        "teacher": "Andrew Thompson",
+        "intro": "Radio-frequency identification (RFID) uses electromagnetic fields to automatically identify and track tags attached to objects. The tags contain electronically stored information. Passive tags collect energy from a nearby RFID reader's interrogating radio waves. Active tags have a local power source such as a battery and may operate at hundreds of meters from the RFID reader. Unlike a barcode, the tag need not be within the line of sight of the reader, so it may be embedded in the tracked object. RFID is one method for Automatic Identification and Data Capture (AIDC).",
+        "moduleName": "RFID",
+        "weekday": "Monday",
+        "openYear": "3",
+        "state": "current",
+        "beginTime": 13,
+        "endTime": 15,
+        "moduleId": "EBU0026",
+        "credit": 2
+      },
+      {
+        "score": 0,
+        "teacherEmail": "emilyd@quml.ac.uk",
+        "teacher": "Emily Davis",
+        "intro": "Wireless sensor networks (WSN), sometimes called wireless sensor and actuator networks (WSAN), are spatially distributed autonomous sensors to monitor physical or environmental conditions, such as temperature, sound, pressure, etc. and to cooperatively pass their data through the network to a main location. The more modern networks are bi-directional, also enabling control of sensor activity. The development of wireless sensor networks was motivated by military applications such as battlefield surveillance; today such networks are used in many industrial and consumer applications, such as industrial process monitoring and control, machine health monitoring, and so on.",
+        "moduleName": "Wireless Sensor",
+        "weekday": "Tuesday",
+        "openYear": "3",
+        "state": "current",
+        "beginTime": 10,
+        "endTime": 12,
+        "moduleId": "EBU0027",
+        "credit": 4
+      }
+    ],
+    "portfolios": [
+      {
+        "projectIntroduction": "this is a database design",
+        "fileLink": "inputFile/ERdiagram.png",
+        "projectName": "Design a Database for a manage system"
+      },
+      {
+        "projectIntroduction": "this is a uml diagram of bank system",
+        "fileLink": "src/Data/BankSystem.png",
+        "projectName": "Bank System"
+      },
+      {
+        "projectIntroduction": "The system enables customers to book tables online.",
+        "fileLink": "https://drive.google.com/drive/folders/XXXXXX",
+        "projectName": "Design a reservation system"
+      }
+    ],
+    "studentNo": "111",
+    "bulletin": [
+      {
+        "updateTime": "2021.05.20",
+        "notice": "Discrete math quiz will be held next Tuesday"
+      }
+    ]
+  }
+]

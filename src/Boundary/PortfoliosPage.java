@@ -15,9 +15,12 @@ import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,20 +29,27 @@ public class PortfoliosPage extends JPanel implements ActionListener {
     private DefaultTableModel tableModel;
     private ArrayList<Portfolios> projects;
     private int indexOfStudentInformation;
+    private JLabel hyperlinkLabel;
+    private JPanel buttonPanel;
 
     public PortfoliosPage(int indexOfStudentInformation) {
+        setLayout(null);
         this.indexOfStudentInformation = indexOfStudentInformation;
         projects = new ArrayList<>();
 
         // Initialize the table
-        String[] columnNames = {"Project Name", "Project Description", "Project File Address"};
+        String[] columnNames = {"Project Name", "Project Description"};
+        //String[] columnNames = {"Project Name", "Project Description"};
         tableModel = new DefaultTableModel(columnNames, 0);
+
         table = new JTable(tableModel);
+        //table.setBounds(5,5,600,300);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         List<Portfolios> portfoliosList = new PortfoliosUtil().getPortfolios(indexOfStudentInformation);
 
         for (Portfolios portfolio : portfoliosList) {
-            tableModel.addRow(new Object[]{portfolio.getProjectName(), portfolio.getProjectIntroduction(), portfolio.getFileLink()});
+            tableModel.addRow(new Object[]{portfolio.getProjectName(), portfolio.getProjectIntroduction()});
+            addOpenFile(tableModel.getRowCount(),portfolio);
             projects.add(portfolio);
         }
 
@@ -62,7 +72,11 @@ public class PortfoliosPage extends JPanel implements ActionListener {
 
         // Initialize the buttons
         JButton uploadButton = new JButton("Upload Project");
+        uploadButton.setBounds(80,20,150,20);
+        add(uploadButton);
         JButton deleteButton = new JButton("Delete Project");
+        deleteButton.setBounds(280,20,150,20);
+        add(deleteButton);
 
         // Add action listeners to the buttons
         uploadButton.addActionListener(new ActionListener() {
@@ -76,10 +90,14 @@ public class PortfoliosPage extends JPanel implements ActionListener {
                     String description = JOptionPane.showInputDialog(PortfoliosPage.this, "Enter project description:");
                     Portfolios project = new Portfolios(name, description, file.getAbsolutePath());
                     projects.add(project);
-                    tableModel.addRow(new Object[]{project.getProjectName(), project.getProjectIntroduction(), project.getFileLink()});
+                    tableModel.addRow(new Object[]{project.getProjectName(), project.getProjectIntroduction()});
 
                     updateJSON(); // 更新JSON文件
+                    addOpenFile(tableModel.getRowCount(),project);
+                    System.out.println(tableModel.getRowCount());
+                    repaint();
                 }
+
             }
         });
 
@@ -92,6 +110,8 @@ public class PortfoliosPage extends JPanel implements ActionListener {
                     tableModel.removeRow(selectedRow);
 
                     updateJSON(); // 更新JSON文件
+                    removeOpenFile();
+                    repaint();
                 }
             }
         });
@@ -100,24 +120,15 @@ public class PortfoliosPage extends JPanel implements ActionListener {
         setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Portfolios",
                 TitledBorder.CENTER, TitledBorder.TOP, new Font("Tahoma", Font.BOLD + Font.ITALIC, 12), Color.BLACK));
 
-        // Set panel layout
-        setLayout(new BorderLayout());
-
         // Add components to the panel
         JScrollPane tableScrollPane = new JScrollPane(table);
-        tableScrollPane.setBorder(BorderFactory.createEmptyBorder());
-        add(tableScrollPane, BorderLayout.CENTER);
-
-        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
-        buttonPanel.setBorder(new EmptyBorder(10, 0, 0, 0));
-        buttonPanel.setBackground(new Color(240, 240, 240));
-        buttonPanel.add(uploadButton);
-        buttonPanel.add(deleteButton);
-        add(buttonPanel, BorderLayout.SOUTH);
+        tableScrollPane.setBounds(5,50,500,300);
+        add(tableScrollPane);
 
         // Set panel background gradient
         setBackground(new Color(142, 178, 231));
         setPreferredSize(new Dimension(600, 400));
+        setSize(600,400);
 
         // Center the panel on the screen
         SwingUtilities.invokeLater(new Runnable() {
@@ -143,6 +154,7 @@ public class PortfoliosPage extends JPanel implements ActionListener {
                 portfolioObject.put("projectIntroduction", portfolio.getProjectIntroduction());
                 portfolioObject.put("fileLink", portfolio.getFileLink());
                 tempList.put(portfolioObject);
+
             }
             jsonObject.put("portfolios", tempList);
             jsonArray.put(indexOfStudentInformation, jsonObject);
@@ -151,11 +163,33 @@ public class PortfoliosPage extends JPanel implements ActionListener {
             FileWriter fileWriter = new FileWriter("src/Data/InformationOfStudents.json");
             fileWriter.write(jsonArray.toString());
             fileWriter.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
+    public void addOpenFile(int numberOfRows,Portfolios portfolio){
+        hyperlinkLabel=new JLabel("<html><a href='file:///C:/path/to/file.txt'>Open File</a></html>");
+        hyperlinkLabel.setBounds(520,numberOfRows*30+45,400,20);
+        hyperlinkLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        hyperlinkLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (Desktop.isDesktopSupported()) {
+                    try {
+                        String fileAddress = portfolio.getFileLink();
+                        Desktop.getDesktop().open(new File(fileAddress));
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        });
+        add(hyperlinkLabel);
+    }
+    public void removeOpenFile(){
+        remove(hyperlinkLabel);
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
 

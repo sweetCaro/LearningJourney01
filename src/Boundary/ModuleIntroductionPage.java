@@ -1,6 +1,6 @@
 package Boundary;
 
-import Controller.ModuleIntroductionUtil;
+import Controller.CurrentModuleUtil;
 import entity.Module;
 
 import javax.swing.*;
@@ -14,7 +14,8 @@ public class ModuleIntroductionPage extends JFrame implements ActionListener {
     //可以按照点击的内容选择文件进行读取
     public ModuleIntroductionPage(int indexOfStudentInformation, String moduleName) {
         setTitle(moduleName);
-        List<Module> moduleList = new ModuleIntroductionUtil().getModules(indexOfStudentInformation);
+
+        List<Module> moduleList = new CurrentModuleUtil().getModules(indexOfStudentInformation);
         String teacher = null;
         String teacherEmail = null;
         String moduleIntroduction = null;
@@ -29,23 +30,30 @@ public class ModuleIntroductionPage extends JFrame implements ActionListener {
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
         // Create labels for the course name, description, teacher name and email
         JLabel courseNameLabel = new JLabel("Course Name: " + moduleName);
-        JLabel courseDescriptionLabel = new JLabel("Description: " + moduleIntroduction);
+        JLabel courseDescriptionLabel = new JLabel("<html>Description: " + moduleIntroduction+"</html>");
+        courseDescriptionLabel.setSize(100,200);
         JLabel teacherNameLabel = new JLabel("Teacher Name: " + teacher);
         JLabel teacherEmailLabel = new JLabel("Teacher Email: " + teacherEmail);
+
         // Add the labels to the frame
         add(courseNameLabel);
+        add(new JLabel("\n"));
         add(courseDescriptionLabel);
+        add(new JLabel("\n"));
         add(teacherNameLabel);
+        add(new JLabel("\n"));
         add(teacherEmailLabel);
         // Set the size and location of the frame
-        setSize(400, 200);
+        setBounds(5,70,400, 400);
+
         setLocationRelativeTo(null);
         // Show the frame
-        setVisible(true);
+        //setVisible(true);
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
-        JPanel panel = new JPanel();
-        add(panel);
-        panel.setLayout(null);
+        //JPanel panel = new JPanel();
+        //add(panel);
+        //panel.setLayout(null);
+
         setVisible(true);
     }
     @Override
@@ -54,36 +62,3 @@ public class ModuleIntroductionPage extends JFrame implements ActionListener {
     }
 
 }
-//import javax.swing.*;
-//public class CourseDetailsPage extends JFrame {
-//    public CourseDetailsPage(String moduleName, String intro,
-//                             String teacher, String teacherEmail) {
-//        // Create a new JFrame
-//        super("Course Details");
-//        // Set the layout
-//        setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
-//        // Create labels for the course name, description, teacher name and email
-//        JLabel courseNameLabel = new JLabel("Course Name: " + moduleName);
-//        JLabel courseDescriptionLabel = new JLabel("Course Description: " + intro);
-//        JLabel teacherNameLabel = new JLabel("Teacher Name: " + teacher);
-//        JLabel teacherEmailLabel = new JLabel("Teacher Email: " + teacherEmail);
-//        // Add the labels to the frame
-//        add(courseNameLabel);
-//        add(courseDescriptionLabel);
-//        add(teacherNameLabel);
-//        add(teacherEmailLabel);
-//        // Set the size and location of the frame
-//        setSize(400, 300);
-//        setLocationRelativeTo(null);
-//        // Show the frame
-//        setVisible(true);
-//    }
-//    public static void main(String[] args) {
-//        // Create a new instance of the CourseDetailsPage
-//        CourseDetailsPage courseDetailsPage = new CourseDetailsPage(
-//                "Java Programming",
-//                "This course teaches the basics of Java programming.",
-//                "John Smith",
-//                "john.smith@example.com");
-//    }
-//}

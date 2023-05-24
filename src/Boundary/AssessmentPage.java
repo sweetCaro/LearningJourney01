@@ -61,64 +61,9 @@ public class AssessmentPage extends JFrame implements ActionListener {
         for(Module item:allModules){
             numbersOfAllModules++;
         }
-/***
- *                    JLabel moduleName = new JLabel(nameOfModule);
-*                     moduleName.setBounds(10, 25 + numbersOfPassedModules * 40, 150, 25);
-*                     detail.add(moduleName);
-*                     JLabel moduleCredits= new JLabel(stringOfCredit);
-*                     moduleCredits.setBounds(200, 25 + numbersOfPassedModules * 40, 150, 25);
-*                     detail.add(moduleCredits);
-*                     JLabel moduleIdentifier=new JLabel(stringOfIdentifier);
-*                     moduleIdentifier.setBounds(270,25+numbersOfPassedModules*40,150,25);
-*                     detail.add(moduleIdentifier);
-*                     JLabel moduleScores = new JLabel(stringOfScore);
-*                     moduleScores.setBounds(380, 25 + numbersOfPassedModules * 40, 90, 25);
-*                     detail.add(moduleScores);
-         */
-//        try {
-//            BufferedReader reader = new BufferedReader(new FileReader("./Information.txt"));
-//            while((s=reader.readLine())!=null){
-//                if(s.substring(0, s.indexOf(":")).equals("passedModule")) {
-//                    numbersOfPassedModules++;
-//                    //先存着，待会用于计算
-//                    //课程名字
-//                    String nameOfModule = s.substring(s.indexOf(":") + 1, s.indexOf("$"));
-//                    //modules.add(nameOfModule);
-//                    //课程所占学分
-//                    String stringOfCredit = s.substring(s.indexOf("$") + 1, s.indexOf("%"));//StringOfCredit用来显示
-//                    int moduleCredit = Integer.parseInt(stringOfCredit);//intOfCredit用来计算
-//                    credit.add(moduleCredit);
-//                    //课程标识
-//                    String stringOfIdentifier=s.substring(s.indexOf("%")+1,s.indexOf("~"));
-//                    //课程成绩
-//                    String stringOfScore = s.substring(s.indexOf("~") + 1);//stringOfScore用来显示
-//                    int scoresOfModule= Integer.parseInt(stringOfScore);//intOfScore用来计算
-//                    scores.add(scoresOfModule);
-//
-//                    JLabel moduleName = new JLabel(nameOfModule);
-//                    moduleName.setBounds(10, 25 + numbersOfPassedModules * 40, 150, 25);
-//                    detail.add(moduleName);
-//                    JLabel moduleCredits= new JLabel(stringOfCredit);
-//                    moduleCredits.setBounds(200, 25 + numbersOfPassedModules * 40, 150, 25);
-//                    detail.add(moduleCredits);
-//                    JLabel moduleIdentifier=new JLabel(stringOfIdentifier);
-//                    moduleIdentifier.setBounds(270,25+numbersOfPassedModules*40,150,25);
-//                    detail.add(moduleIdentifier);
-//                    JLabel moduleScores = new JLabel(stringOfScore);
-//                    moduleScores.setBounds(380, 25 + numbersOfPassedModules * 40, 90, 25);
-//                    detail.add(moduleScores);
-//                }
-//                if(s.substring(0,s.indexOf(":")).equals("futureModule")){
-//                    numbersOfAllModules++;
-//                }
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
 
         //显示学业课程进度条
         int sumOfModules=0;
-//        sumOfModules=numbersOfAllModules+numbersOfPassedModules;
         int progressValue=numbersOfPassedModules*100/numbersOfAllModules;
         JProgressBar progressOfLearning=new JProgressBar(0,100);
         //progressOfLearning.setIndeterminate(false);
@@ -144,26 +89,9 @@ public class AssessmentPage extends JFrame implements ActionListener {
                 System.out.println("Training Program!");
             }
         });
-        //计算加权平均分和gpa
-        double weightedAverageGrade=0,gpa=0;
-        int gotGrade=0,totalGrade=0;//获得分数和获得总分
-        System.out.println(totalGrade);
-        for(int i=0;i<passedModules.size();i++){
-            gotGrade+=passedModules.get(i).getScore()*passedModules.get(i).getCredit();//各科成绩*各课程权重
-            totalGrade+=100*passedModules.get(i).getCredit();
-        }
-        weightedAverageGrade=gotGrade*100.0/totalGrade;//加权分数
 
-        if(weightedAverageGrade>89&&weightedAverageGrade<=100)  gpa=4.0;
-        if(weightedAverageGrade>84&&weightedAverageGrade<=89)  gpa=3.7;
-        if(weightedAverageGrade>81&&weightedAverageGrade<=84)  gpa=3.3;
-        if(weightedAverageGrade>77&&weightedAverageGrade<=81)  gpa=3.0;
-        if(weightedAverageGrade>74&&weightedAverageGrade<=77)  gpa=2.7;
-        if(weightedAverageGrade>71&&weightedAverageGrade<=74)  gpa=2.3;
-        if(weightedAverageGrade>67&&weightedAverageGrade<=71)  gpa=2.0;
-        if(weightedAverageGrade>63&&weightedAverageGrade<=67)  gpa=1.7;
-        if(weightedAverageGrade>59&&weightedAverageGrade<=63)  gpa=1.0;
-        if(weightedAverageGrade>0&&weightedAverageGrade<=59)  gpa=0;
+        double weightedAverageGrade=new AssessmentUtil().getWeight(passedModules);
+        double gpa=new AssessmentUtil().getGpa(weightedAverageGrade);
 
         //添加课程成绩等标签
         JLabel weightedAverage = new JLabel("Weighted Average Score: "+new java.text.DecimalFormat("#.00").format(weightedAverageGrade));

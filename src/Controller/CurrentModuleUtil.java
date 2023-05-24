@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class ModuleIntroductionUtil extends ModuleUtil{
+public class CurrentModuleUtil extends ModuleUtil{
     public List<Module> getModules(int indexOfStudentInformation) {
         List<Module> moduleList=super.getModules(indexOfStudentInformation);
         List<Module> currentModuleList=new ArrayList<Module>();

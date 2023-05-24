@@ -12,10 +12,8 @@ import java.util.List;
 public class ModuleUtil {
     public List<Module> getModules(int indexOfStudentInformation) {
         List<Module> moduleList=null;
-
         try{
             JSONArray jsonArray = new JSONArray(new JSONTokener(new FileReader("src/Data/InformationOfStudents.json")));
-
             JSONObject jsonObject = jsonArray.getJSONObject(indexOfStudentInformation);
             JSONArray tempList=jsonObject.getJSONArray("module");
             moduleList=new ArrayList<>();

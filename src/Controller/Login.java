@@ -23,16 +23,6 @@ public class Login {
                         jsonObject.getString("password"),
                         jsonObject.getString("studentName")
                 );
-//                student = new Student(jsonObject.getString("studentNo"),
-//                        jsonObject.getString("password"),
-//                        jsonObject.getString("studentName"),
-//                        jsonObject.getJSONArray("module").toList(),
-//                        jsonObject.getJSONArray("todoList").toList(),
-//                        jsonObject.getJSONArray("role").toList(),
-//                        jsonObject.getJSONArray("portfolios").toList(),
-//                        jsonObject.getJSONArray("bulletin").toList(),
-//                        jsonObject.getJSONArray("awards").toList()
-//                        );
 
                 if (Objects.equals(studentNo, student.getStudentNo())&&Objects.equals(password,student.getPassword())){
                     valid=true;
